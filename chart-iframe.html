@@ -66,16 +66,18 @@
       });
     </script>
     <script>
-        const golferChart = document.getElementById('golferChart');
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to parse query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const golferName = getQueryParam('golferName');
         
-        // Listen for messages from the parent document
-        window.addEventListener('message', function(event) {
-            // Check for the expected origin (adjust according to your environment)
-            if (event.origin !== "http://example.com") {
-                return;
-            }
-            const data = event.data;
-            // Update the golfer name in the filter dynamically
+        if (golferName) {
+            // Assuming you have an element with id 'golferChart' that is your Luzmo viz item
+            const golferChart = document.querySelector('luzmo-viz-item');
             golferChart.filters = JSON.stringify([
                 {
                     "condition": "or",
@@ -88,15 +90,17 @@
                                     "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
                                     "level": 1
                                 },
-                                [data.golferName] // The golfer name is dynamically set here
+                                [golferName]
                             ]
                         }
                     ]
                 }
             ]);
             golferChart.refresh(); // Refresh the chart to update with the new filter
-        });
-    </script>
+        }
+    });
+</script>
+
   </body>
 
 </html>
