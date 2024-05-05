@@ -1,0 +1,567 @@
+{
+  "version": "0.1.84",
+  "syncScreenModes": true,
+  "datasetLinks": {
+    "1086ce9e-6a9e-46f1-8add-67a423d748f6": []
+  },
+  "views": [
+    {
+      "screenModus": "desktop",
+      "options": {
+        "share": {
+          "poweredBy": false
+        },
+        "theme": {
+          "id": "default"
+        },
+        "alertingEnabled": true
+      },
+      "filterGroups": [
+        {
+          "id": "3381e961-85e7-45d7-9932-cf2e2b1617a8",
+          "origin": "itemFilter",
+          "condition": "and",
+          "filters": [
+            {
+              "expression": "? in ?",
+              "parameters": [
+                {
+                  "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                  "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "level": 1
+                },
+                [
+                  "Emiliano Grillo"
+                ]
+              ],
+              "properties": {
+                "type": "having",
+                "id": "a0e1ef51-84c1-470b-91fd-1b7b4022abe9",
+                "viz": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58",
+                "origin": "itemFilter"
+              }
+            }
+          ],
+          "subGroups": [],
+          "vizId": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58"
+        }
+      ],
+      "items": [
+        {
+          "id": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58",
+          "type": "line-chart",
+          "position": {
+            "sizeX": 15,
+            "sizeY": 7,
+            "row": 0,
+            "col": 0
+          },
+          "title": {},
+          "options": {
+            "interpolation": "linear",
+            "grid": {
+              "x": {
+                "enabled": false
+              },
+              "y": {
+                "enabled": false
+              },
+              "y2": {
+                "enabled": false
+              }
+            },
+            "axislabels": {
+              "x": {
+                "enabled": false,
+                "position": "center"
+              },
+              "y": {
+                "enabled": false,
+                "position": "middle"
+              },
+              "y2": {
+                "enabled": false,
+                "position": "middle"
+              }
+            },
+            "axis": {
+              "x": {
+                "ticksMode": "ticks"
+              },
+              "y": {
+                "scale": "linear",
+                "ticksMode": "ticks",
+                "type": "variable",
+                "scaleLogBase": 10
+              },
+              "y2": {
+                "active": false,
+                "measureIndexes": [
+                  1
+                ],
+                "scale": "linear",
+                "ticksMode": "ticks",
+                "type": "default"
+              }
+            },
+            "lines": {
+              "strokeWidth": 2,
+              "gradient": true
+            },
+            "markers": {
+              "enabled": true,
+              "size": 5
+            },
+            "interactivity": {
+              "brush": true,
+              "urlConfig": {
+                "target": "_blank",
+                "url": null
+              },
+              "exportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ],
+              "availableExportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ]
+            },
+            "display": {
+              "title": false,
+              "legend": true
+            },
+            "legend": {
+              "position": "topRight"
+            },
+            "filter": {},
+            "nullBreak": false,
+            "missingValue": {
+              "type": "no"
+            },
+            "title": {
+              "en": "Line chart"
+            }
+          },
+          "content": {},
+          "slots": [
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "b7023337-e553-4302-b7c6-e069d589e4bd",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "RK"
+                  },
+                  "type": "numeric",
+                  "subtype": null,
+                  "format": ".0f"
+                }
+              ]
+            },
+            {
+              "name": "x-axis",
+              "content": [
+                {
+                  "column": "24ce15dd-3807-490a-983f-273bd57fdc61",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "Year (Yr)"
+                  },
+                  "type": "datetime",
+                  "subtype": null,
+                  "format": "%d-%m-%Y",
+                  "lowestLevel": 9,
+                  "level": 1
+                }
+              ]
+            },
+            {
+              "name": "legend",
+              "content": []
+            }
+          ],
+          "source": "user",
+          "aichartId": null
+        }
+      ]
+    },
+    {
+      "screenModus": "tablet",
+      "options": {
+        "share": {
+          "poweredBy": false
+        },
+        "theme": {
+          "id": "default"
+        },
+        "alertingEnabled": true
+      },
+      "filterGroups": [
+        {
+          "id": "3381e961-85e7-45d7-9932-cf2e2b1617a8",
+          "origin": "itemFilter",
+          "condition": "and",
+          "filters": [
+            {
+              "expression": "? in ?",
+              "parameters": [
+                {
+                  "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                  "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "level": 1
+                },
+                [
+                  "Emiliano Grillo"
+                ]
+              ],
+              "properties": {
+                "type": "having",
+                "id": "a0e1ef51-84c1-470b-91fd-1b7b4022abe9",
+                "viz": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58",
+                "origin": "itemFilter"
+              }
+            }
+          ],
+          "subGroups": [],
+          "vizId": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58"
+        }
+      ],
+      "items": [
+        {
+          "id": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58",
+          "type": "line-chart",
+          "position": {
+            "sizeX": 37,
+            "sizeY": 16,
+            "row": 20,
+            "col": 0
+          },
+          "title": {},
+          "options": {
+            "interpolation": "linear",
+            "grid": {
+              "x": {
+                "enabled": false
+              },
+              "y": {
+                "enabled": false
+              },
+              "y2": {
+                "enabled": false
+              }
+            },
+            "axislabels": {
+              "x": {
+                "enabled": false,
+                "position": "center"
+              },
+              "y": {
+                "enabled": false,
+                "position": "middle"
+              },
+              "y2": {
+                "enabled": false,
+                "position": "middle"
+              }
+            },
+            "axis": {
+              "x": {
+                "ticksMode": "ticks"
+              },
+              "y": {
+                "scale": "linear",
+                "ticksMode": "ticks",
+                "type": "variable",
+                "scaleLogBase": 10
+              },
+              "y2": {
+                "active": false,
+                "measureIndexes": [
+                  1
+                ],
+                "scale": "linear",
+                "ticksMode": "ticks",
+                "type": "default"
+              }
+            },
+            "lines": {
+              "strokeWidth": 2,
+              "gradient": true
+            },
+            "markers": {
+              "enabled": true,
+              "size": 5
+            },
+            "interactivity": {
+              "brush": true,
+              "urlConfig": {
+                "target": "_blank",
+                "url": null
+              },
+              "exportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ],
+              "availableExportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ]
+            },
+            "display": {
+              "title": false,
+              "legend": true
+            },
+            "legend": {
+              "position": "topRight"
+            },
+            "filter": {},
+            "nullBreak": false,
+            "missingValue": {
+              "type": "no"
+            },
+            "title": {
+              "en": "Line chart"
+            }
+          },
+          "content": {},
+          "slots": [
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "b7023337-e553-4302-b7c6-e069d589e4bd",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "RK"
+                  },
+                  "type": "numeric",
+                  "subtype": null,
+                  "format": ".0f"
+                }
+              ]
+            },
+            {
+              "name": "x-axis",
+              "content": [
+                {
+                  "column": "24ce15dd-3807-490a-983f-273bd57fdc61",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "Year (Yr)"
+                  },
+                  "type": "datetime",
+                  "subtype": null,
+                  "format": "%d-%m-%Y",
+                  "lowestLevel": 9,
+                  "level": 1
+                }
+              ]
+            },
+            {
+              "name": "legend",
+              "content": []
+            }
+          ],
+          "source": "user",
+          "aichartId": null
+        }
+      ]
+    },
+    {
+      "screenModus": "mobile",
+      "options": {
+        "share": {
+          "poweredBy": false
+        },
+        "theme": {
+          "id": "default"
+        },
+        "alertingEnabled": true
+      },
+      "filterGroups": [
+        {
+          "id": "3381e961-85e7-45d7-9932-cf2e2b1617a8",
+          "origin": "itemFilter",
+          "condition": "and",
+          "filters": [
+            {
+              "expression": "? in ?",
+              "parameters": [
+                {
+                  "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                  "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "level": 1
+                },
+                [
+                  "Emiliano Grillo"
+                ]
+              ],
+              "properties": {
+                "type": "having",
+                "id": "a0e1ef51-84c1-470b-91fd-1b7b4022abe9",
+                "viz": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58",
+                "origin": "itemFilter"
+              }
+            }
+          ],
+          "subGroups": [],
+          "vizId": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58"
+        }
+      ],
+      "items": [
+        {
+          "id": "61c52d26-3e3b-40e7-8ca9-79ab485d3d58",
+          "type": "line-chart",
+          "position": {
+            "sizeX": 6,
+            "sizeY": 16,
+            "row": 20,
+            "col": 0
+          },
+          "title": {},
+          "options": {
+            "interpolation": "linear",
+            "grid": {
+              "x": {
+                "enabled": false
+              },
+              "y": {
+                "enabled": false
+              },
+              "y2": {
+                "enabled": false
+              }
+            },
+            "axislabels": {
+              "x": {
+                "enabled": false,
+                "position": "center"
+              },
+              "y": {
+                "enabled": false,
+                "position": "middle"
+              },
+              "y2": {
+                "enabled": false,
+                "position": "middle"
+              }
+            },
+            "axis": {
+              "x": {
+                "ticksMode": "ticks"
+              },
+              "y": {
+                "scale": "linear",
+                "ticksMode": "ticks",
+                "type": "variable",
+                "scaleLogBase": 10
+              },
+              "y2": {
+                "active": false,
+                "measureIndexes": [
+                  1
+                ],
+                "scale": "linear",
+                "ticksMode": "ticks",
+                "type": "default"
+              }
+            },
+            "lines": {
+              "strokeWidth": 2,
+              "gradient": true
+            },
+            "markers": {
+              "enabled": true,
+              "size": 5
+            },
+            "interactivity": {
+              "brush": true,
+              "urlConfig": {
+                "target": "_blank",
+                "url": null
+              },
+              "exportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ],
+              "availableExportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ]
+            },
+            "display": {
+              "title": false,
+              "legend": true
+            },
+            "legend": {
+              "position": "topRight"
+            },
+            "filter": {},
+            "nullBreak": false,
+            "missingValue": {
+              "type": "no"
+            },
+            "title": {
+              "en": "Line chart"
+            }
+          },
+          "content": {},
+          "slots": [
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "b7023337-e553-4302-b7c6-e069d589e4bd",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "RK"
+                  },
+                  "type": "numeric",
+                  "subtype": null,
+                  "format": ".0f"
+                }
+              ]
+            },
+            {
+              "name": "x-axis",
+              "content": [
+                {
+                  "column": "24ce15dd-3807-490a-983f-273bd57fdc61",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "Year (Yr)"
+                  },
+                  "type": "datetime",
+                  "subtype": null,
+                  "format": "%d-%m-%Y",
+                  "lowestLevel": 9,
+                  "level": 1
+                }
+              ]
+            },
+            {
+              "name": "legend",
+              "content": []
+            }
+          ],
+          "source": "user",
+          "aichartId": null
+        }
+      ]
+    }
+  ],
+  "parameters": [],
+  "timezone": {
+    "type": "fixed",
+    "id": "Europe/Brussels"
+  },
+  "filters": {}
+}
