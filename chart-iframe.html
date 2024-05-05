@@ -77,8 +77,6 @@
             const golferName = getQueryParam('golferName');  // Get the golfer name from URL parameters
             const golferChart = document.getElementById('golferChart');
         console.log("Golfer name", golferName);
-        console.log("Golfer chart", golferChart);
-
 
             if (golferName && golferChart) {
                       console.log("Golfer name and chart element found.");
@@ -104,6 +102,8 @@
                 // Assuming 'update' or a similar method exists to apply the filters
                 if (typeof golferChart.update === 'function') {
                     golferChart.update();  // Update the chart to reflect new filters
+                            console.log("Golfer chart", golferChart);
+
                 } else {
                     console.error("Update method not found on golferChart.");
                 }
