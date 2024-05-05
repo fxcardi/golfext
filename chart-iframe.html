@@ -101,15 +101,14 @@
                         ]
                     }
                 ]);
-                                    golferChart.update();  // Update the chart to reflect new filters
+               if (golferChart && typeof golferChart.update === 'function') {
+    golferChart.update(); // Assuming 'update' is the correct method
+} else if (golferChart && typeof golferChart.refresh === 'function') {
+    golferChart.refresh(); // If 'refresh' is indeed the method
+} else {
+    console.error("No valid update/refresh method found for golferChart.");
+}
 
-                // Assuming 'update' or a similar method exists to apply the filters
-                if (typeof golferChart.update === 'function') {
-                            console.log("Golfer chart", golferChart);
-
-                } else {
-                    console.error("Update method not found on golferChart.");
-                }
             } else {
                 console.error("Golfer name not provided or golferChart element not found.");
             }
