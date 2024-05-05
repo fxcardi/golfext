@@ -59,6 +59,7 @@
       // add apihost, appServer, authKey and authToken to all luzmo-viz-item
       const luzmoVizItems = document.querySelectorAll('luzmo-viz-item');
       luzmoVizItems.forEach((item) => {
+        item.id="golferChart"
         item.apiHost = 'https://api.luzmo.com';
         item.appServer = 'https://app.luzmo.com';
         item.authKey = 'c312dabb-fc0c-4ab0-95cf-2d5801eb404c';
@@ -76,8 +77,13 @@
         document.addEventListener("DOMContentLoaded", function() {
             const golferName = getQueryParam('golferName');  // Get the golfer name from URL parameters
             const golferChart = document.getElementById('golferChart');
+        console.log("Golfer name", golferName);
+        console.log("Golfer chart", golferChart);
+
 
             if (golferName && golferChart) {
+                      console.log("Golfer name and chart element found.");
+
                 golferChart.filters = JSON.stringify([
                     {
                         "condition": "or",
