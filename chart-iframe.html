@@ -101,9 +101,10 @@
                         ]
                     }
                 ]);
+                                    golferChart.update();  // Update the chart to reflect new filters
+
                 // Assuming 'update' or a similar method exists to apply the filters
                 if (typeof golferChart.update === 'function') {
-                    golferChart.update();  // Update the chart to reflect new filters
                             console.log("Golfer chart", golferChart);
 
                 } else {
