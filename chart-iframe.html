@@ -73,6 +73,7 @@
             return urlParams.get(param);
         }
 
+
         // Wait until the DOM content is fully loaded
         document.addEventListener("DOMContentLoaded", function() {
             const golferName = getQueryParam('golferName');  // Get the golfer name from URL parameters
@@ -101,17 +102,21 @@
                         ]
                     }
                 ]);
-               if (golferChart && typeof golferChart.update === 'function') {
+
+                // Update the chart after setting filters
+        setTimeout(() => {
+           if (golferChart && typeof golferChart.update === 'function') {
     golferChart.update(); // Assuming 'update' is the correct method
 } else if (golferChart && typeof golferChart.refresh === 'function') {
     golferChart.refresh(); // If 'refresh' is indeed the method
 } else {
     console.error("No valid update/refresh method found for golferChart.");
 }
+        }, 500); // Delay to ensure settings have taken effect
+    } else {
+        console.error("Golfer name not provided.");
+    }
 
-            } else {
-                console.error("Golfer name not provided or golferChart element not found.");
-            }
         });
     </script>
 </body>
