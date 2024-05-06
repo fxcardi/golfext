@@ -167,7 +167,6 @@
         document.addEventListener("DOMContentLoaded", function() {
             const golferName = getQueryParam('golferName');  // Get the golfer name from URL parameters
             const golferChart = document.getElementById('golferChart');
-            const golferChart1 = document.getElementById('golferChart1');
         console.log("Golfer name", golferName);
         console.log("Golfer chart", golferChart);
 
@@ -192,34 +191,13 @@
                         ]
                     }
                 ]);
-                 golferChart1.filters = JSON.stringify([
-                    {
-                        "condition": "or",
-                        "filters": [
-                            {
-                                "expression": "? in ?",
-                                "parameters": [
-                                    {
-                                        "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                                        "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                                        "level": 1
-                                    },
-                                    [golferName]
-                                ]
-                            }
-                        ]
-                    }
-                ]);
 
                 // Update the chart after setting filters
         setTimeout(() => {
            if (golferChart && typeof golferChart.update === 'function') {
     golferChart.update(); // Assuming 'update' is the correct method
-    golferChart1.update(); // Assuming 'update' is the correct method
 } else if (golferChart && typeof golferChart.refresh === 'function') {
     golferChart.refresh(); // If 'refresh' is indeed the method
-    golferChart1.refresh(); // If 'refresh' is indeed the method
-
 } else {
     console.error("No valid update/refresh method found for golferChart.");
 }
