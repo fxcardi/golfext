@@ -203,7 +203,7 @@
                 // Update the chart after setting filters
         setTimeout(() => {
           if (golferChart.isConnected && typeof golferChart.update === 'function') {
-    golferChart.update();
+    golferChart.refresh();
     golferChart.style.display = 'block';  // Show the chart after updating
     console.log("Golfer chart upd", golferChart);
 
