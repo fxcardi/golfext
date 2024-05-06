@@ -61,6 +61,118 @@
         ]'
       >
       </luzmo-viz-item> 
+      <div class="container" style="height: 100px;">
+      <luzmo-viz-item
+        class="bar-chart"
+        type="bar-chart"
+        title= {}
+        options='{
+            "mode": "100",
+            "categories": {
+              "colored": false
+            },
+            "grid": {
+              "x": {
+                "enabled": false
+              },
+              "y": {
+                "enabled": false
+              }
+            },
+            "axislabels": {
+              "x": {
+                "enabled": false,
+                "position": "center"
+              },
+              "y": {
+                "enabled": false,
+                "position": "middle"
+              }
+            },
+            "axis": {
+              "x": {
+                "ticksMode": "ticks",
+                "scale": "linear"
+              },
+              "y": {
+                "ticksMode": "ticks"
+              }
+            },
+            "hidemodeOption": true,
+            "bars": {
+              "label": "absolute"
+            },
+            "filter": {},
+            "display": {
+              "title": false,
+              "legend": false,
+              "modeOption": false
+            },
+            "legend": {
+              "position": "topRight"
+            },
+            "interactivity": {
+              "select": true,
+              "urlConfig": {
+                "target": "_blank",
+                "url": null
+              },
+              "exportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ],
+              "availableExportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ]
+            },
+            "title": {
+              "en": "Stacked bar chart"
+            }
+          }'
+       slots='"slots": [
+            {
+              "name": "y-axis",
+              "content": []
+            },
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "a0808f8d-b075-4035-8956-c475266958b6",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "Earnings in dollars"
+                  },
+                  "type": "numeric",
+                  "subtype": "currency",
+                  "format": ",.2af",
+                  "currency": "$"
+                }
+              ]
+            },
+            {
+              "name": "legend",
+              "content": [
+                {
+                  "column": "24ce15dd-3807-490a-983f-273bd57fdc61",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "Year (Yr)"
+                  },
+                  "type": "datetime",
+                  "subtype": null,
+                  "format": "%d-%m-%Y",
+                  "lowestLevel": 9,
+                  "level": 1
+                }
+              ]
+            }
+          ]'
+      >
+      </luzmo-viz-item> 
     </div>
 
     <script>
