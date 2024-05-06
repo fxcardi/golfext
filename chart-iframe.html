@@ -169,6 +169,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             const golferName = getQueryParam('golferName');  // Get the golfer name from URL parameters
             const golferChart = document.getElementById('golferChart');
+        console.log("Golfer name", golferName);
+
             if (golferName && golferChart) {
                       console.log("Golfer name and chart element found.");
 
@@ -195,6 +197,8 @@
         setTimeout(() => {
            if (golferChart && typeof golferChart.update === 'function') {
     golferChart.update(); // Assuming 'update' is the correct method
+            console.log("Golfer chart", golferChart);
+
 } else if (golferChart && typeof golferChart.refresh === 'function') {
     golferChart.refresh(); // If 'refresh' is indeed the method
 } else {
