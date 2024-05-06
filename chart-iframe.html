@@ -171,6 +171,7 @@
             const golferChart = document.getElementById('golferChart');
         console.log("Golfer name", golferName);
 
+
             if (golferName && golferChart) {
                       console.log("Golfer name and chart element found.");
 
@@ -196,12 +197,12 @@
 
                 // Update the chart after setting filters
         setTimeout(() => {
-           if (golferChart && typeof golferChart.update === 'function') {
-    golferChart.update(); // Assuming 'update' is the correct method
-                    console.log("Golfer chart upd", golferChart);
+          if (golferChart.isConnected && typeof golferChart.update === 'function') {
+    golferChart.update();
+    console.log("Golfer chart upd", golferChart);
 
 } else {
-    console.error("No valid update/refresh method found for golferChart.");
+    console.error("Component not ready or update method unavailable.");
 }
         }, 2800); // Delay to ensure settings have taken effect
     } else {
