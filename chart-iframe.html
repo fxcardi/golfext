@@ -65,6 +65,7 @@
       <luzmo-viz-item
         class="bar-chart"
         type="bar-chart"
+        title= {}
         options='{
             "mode": "100",
             "categories": {
@@ -100,6 +101,35 @@
             "hidemodeOption": true,
             "bars": {
               "label": "absolute"
+            },
+            "filter": {},
+            "display": {
+              "title": false,
+              "legend": false,
+              "modeOption": false
+            },
+            "legend": {
+              "position": "topRight"
+            },
+            "interactivity": {
+              "select": true,
+              "urlConfig": {
+                "target": "_blank",
+                "url": null
+              },
+              "exportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ],
+              "availableExportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ]
+            },
+            "title": {
+              "en": "Stacked bar chart"
             }
           }'
        slots='[
