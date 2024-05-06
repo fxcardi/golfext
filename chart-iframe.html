@@ -199,15 +199,10 @@
     golferChart.update(); // Assuming 'update' is the correct method
                     console.log("Golfer chart upd", golferChart);
 
-} else if (golferChart && typeof golferChart.refresh === 'function') {
-    golferChart.refresh(); // If 'refresh' is indeed the method
-                    console.log("Golfer chart ref", golferChart);
-
-
 } else {
     console.error("No valid update/refresh method found for golferChart.");
 }
-        }, 2800); // Delay to ensure settings have taken effect
+        }, 800); // Delay to ensure settings have taken effect
     } else {
         console.error("Golfer name not provided.");
     }
