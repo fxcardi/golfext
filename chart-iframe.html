@@ -226,6 +226,18 @@
     console.error("No valid update/refresh method found for golferChart.");
 }
         }, 800); // Delay to ensure settings have taken effect
+
+setTimeout(() => {
+           if (golferChart1 && typeof golferChart1.update === 'function') {
+    golferChart1.update(); // Assuming 'update' is the correct method
+} else if (golferChart1 && typeof golferChart1.refresh === 'function') {
+    golferChart1.refresh(); // If 'refresh' is indeed the method
+
+} else {
+    console.error("No valid update/refresh method found for golferChart.");
+}
+        }, 800); // Delay to ensure settings have taken effect
+
     } else {
         console.error("Golfer name not provided.");
     }
