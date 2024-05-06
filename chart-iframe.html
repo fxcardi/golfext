@@ -217,11 +217,8 @@
         setTimeout(() => {
            if (golferChart && typeof golferChart.update === 'function') {
     golferChart.update(); // Assuming 'update' is the correct method
-    golferChart1.update(); // Assuming 'update' is the correct method
 } else if (golferChart && typeof golferChart.refresh === 'function') {
     golferChart.refresh(); // If 'refresh' is indeed the method
-    golferChart1.refresh(); // If 'refresh' is indeed the method
-
 } else {
     console.error("No valid update/refresh method found for golferChart.");
 }
