@@ -11,7 +11,6 @@
   <body>
     <div class="container" style="height: 100px;">
       <luzmo-viz-item
-      id='golferChart';
         class="line-chart"
         type="line-chart"
         title= {}
@@ -64,8 +63,6 @@
       </luzmo-viz-item> 
       <div class="container" style="height: 100px;">
       <luzmo-viz-item
-        id='golferChart1';
-
         class="bar-chart"
         type="bar-chart"
         options='{
@@ -120,6 +117,7 @@
                     "en": "Earnings in dollars"
                   },
                   "type": "numeric",
+                  "subtype": "currency",
                   "format": ",.2af",
                   "currency": "$"
                 }
@@ -135,6 +133,7 @@
                     "en": "Year (Yr)"
                   },
                   "type": "datetime",
+                  "subtype": null,
                   "format": "%d-%m-%Y",
                   "lowestLevel": 9,
                   "level": 1
@@ -170,8 +169,9 @@
             const golferChart = document.getElementById('golferChart');
             const golferChart1 = document.getElementById('golferChart1');
         console.log("Golfer name", golferName);
+        console.log("Golfer chart", golferChart);
 
-            if (golferName && golferChart && golferChart1) {
+            if (golferName && golferChart) {
                       console.log("Golfer name and chart element found.");
 
                 golferChart.filters = JSON.stringify([
@@ -215,29 +215,18 @@
         setTimeout(() => {
            if (golferChart && typeof golferChart.update === 'function') {
     golferChart.update(); // Assuming 'update' is the correct method
+    golferChart1.update(); // Assuming 'update' is the correct method
 } else if (golferChart && typeof golferChart.refresh === 'function') {
     golferChart.refresh(); // If 'refresh' is indeed the method
-} else {
-    console.error("No valid update/refresh method found for golferChart.");
-}
-        }, 800); // Delay to ensure settings have taken effect
-
-setTimeout(() => {
-           if (golferChart1 && typeof golferChart1.update === 'function') {
-    golferChart1.update(); // Assuming 'update' is the correct method
-} else if (golferChart1 && typeof golferChart1.refresh === 'function') {
     golferChart1.refresh(); // If 'refresh' is indeed the method
 
 } else {
     console.error("No valid update/refresh method found for golferChart.");
 }
         }, 800); // Delay to ensure settings have taken effect
-
     } else {
         console.error("Golfer name not provided.");
     }
-            console.log("Golfer chart", golferChart);
-        console.log("Golfer char1", golferChart1);
 
         });
     </script>
