@@ -14,49 +14,7 @@
     ></script>
   </head>
   <body>
-    <script>
-        // Function to parse query parameters
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const golferName = getQueryParam('golferName');
-    console.log("Golfer name:", golferName);
-
-    setTimeout(() => {
-        applyFilters('golferChart', golferName);
-        applyFilters('golferChart2', golferName);
-    }, 800);  // Correcting the misuse of setTimeout
-});
-
-function applyFilters(chartId, golferName) {
-    const chart = document.getElementById(chartId);
-    if (chart && golferName) {
-        chart.filters = JSON.stringify([{
-            "condition": "or",
-            "filters": [{
-                "expression": "? in ?",
-                "parameters": [{
-                    "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                    "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                    "level": 1
-                }, [golferName]]
-            }]
-        }]);
-        if (typeof chart.update === 'function') {
-            chart.update();
-                        console.log("chart updated.");
-
-        } else {
-            console.error("Update method not available.");
-        }
-    } else {
-        console.error("Chart element or golfer name not found.");
-    }
-}
-    </script>
+    
     <div class="container" style="height: 200px;">
           <luzmo-viz-item
         id = "golferChart2"
@@ -174,6 +132,55 @@ function applyFilters(chartId, golferName) {
       >
       </luzmo-viz-item> 
     </div>
+    <script>
+        // Function to parse query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const golferName = getQueryParam('golferName');
+    console.log("Golfer name:", golferName);
+
+    setTimeout(() => {
+        applyFilters('golferChart', golferName);
+        applyFilters('golferChart2', golferName);
+    }, 800);  // Correcting the misuse of setTimeout
+});
+
+function applyFilters(chartId, golferName) {
+    setTimeout(() => {  // Stagger updates
+        const chart = document.getElementById(chartId);
+        if (chart && golferName) {
+            setChartFilters(chart, golferName);
+        } else {
+            console.error("Chart element or golfer name not found for:", chartId);
+        }
+    }, chartId === 'golferChart' ? 0 : 500);  // Delay second chart update by 500 ms
+}
+
+function setChartFilters(chart, golferName) {
+    chart.filters = JSON.stringify([{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                "level": 1
+            }, [golferName]]
+        }]
+    }]);
+
+    if (typeof chart.update === 'function') {
+        chart.update();
+    } else {
+        console.error("Update method not available for chart:", chart.id);
+    }
+}
+
+    </script>
 </body>
 </html>
 
