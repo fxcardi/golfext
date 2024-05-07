@@ -24,8 +24,34 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const golferName = getQueryParam('golferName');
-    updateChart('golferChart', golferName);
-    updateChart('golferChart2', golferName); // Ensure this is called as well
+    golferChart.filters= JSON.stringify([{
+            "condition": "or",
+            "filters": [{
+                "expression": "? in ?",
+                "parameters": [{
+                        "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                        "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                        "level": 1
+                    },
+                    [golferName]
+                ]
+            }]
+        }]);
+    golferChart2.filters=JSON.stringify([{
+            "condition": "or",
+            "filters": [{
+                "expression": "? in ?",
+                "parameters": [{
+                        "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                        "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                        "level": 1
+                    },
+                    [golferName]
+                ]
+            }]
+        }]);
+    //updateChart('golferChart', golferName);
+    //updateChart('golferChart2', golferName); // Ensure this is called as well
 
 });
 
