@@ -166,39 +166,7 @@ golferChart2.filters = [{
             }, [golferName]]
         }]}];
         }, 800);
-
-    console.log("Golfer chart1 filter:", golferChart.filters);
-    //setTimeout(() => {
-        //applyFilters('golferChart', golferName);
-       // applyFilters('golferChart2', golferName);
-    //}, 800);  // Correcting the misuse of setTimeout
 });
-
-function applyFilters(chartId, golferName) {
-    setTimeout(() => {  // Stagger updates
-        const chart = document.getElementById(chartId);
-        if (chart && golferName) {
-            setChartFilters(chart, golferName);
-        } else {
-            console.error("Chart element or golfer name not found for:", chartId);
-        }
-    }, chartId === 'golferChart' ? 0 : 800);  // Delay second chart update by 500 ms
-}
-
-function setChartFilters(chart, golferName) {
-    chart.filters = JSON.stringify([{
-        "condition": "or",
-        "filters": [{
-            "expression": "? in ?",
-            "parameters": [{
-                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                "level": 1
-            }, [golferName]]
-        }]
-    }]);
-        chart.update();
-}
 
     </script>
 </body>
