@@ -21,71 +21,37 @@
             return urlParams.get(param);
         }
 
-
 document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(5500); 
     const golferName = getQueryParam('golferName');
-            console.log("Golfer name:", golferName);
+    console.log("Golfer name:", golferName);
 
-    golferChart.filters= JSON.stringify([{
-            "condition": "or",
-            "filters": [{
-                "expression": "? in ?",
-                "parameters": [{
-                        "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                        "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                        "level": 1
-                    },
-                    [golferName]
-                ]
-            }]
-        }]);
-    golferChart2.filters=JSON.stringify([{
-            "condition": "or",
-            "filters": [{
-                "expression": "? in ?",
-                "parameters": [{
-                        "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                        "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                        "level": 1
-                    },
-                    [golferName]
-                ]
-            }]
-        }]);
-    //updateChart('golferChart', golferName);
-    //updateChart('golferChart2', golferName); // Ensure this is called as well
-
+    setTimeout(() => {
+        applyFilters('golferChart', golferName);
+        applyFilters('golferChart2', golferName);
+    }, 5500);  // Correcting the misuse of setTimeout
 });
 
-function updateChart(chartId, golferName) {
+function applyFilters(chartId, golferName) {
     const chart = document.getElementById(chartId);
-    if (golferName && chart) {
-        console.log("Applying filters to chart:", chartId);
-
+    if (chart && golferName) {
         chart.filters = JSON.stringify([{
             "condition": "or",
             "filters": [{
                 "expression": "? in ?",
                 "parameters": [{
-                        "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                        "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                        "level": 1
-                    },
-                    [golferName]
-                ]
+                    "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                    "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                    "level": 1
+                }, [golferName]]
             }]
         }]);
-        setTimeout(() => {
-            if (chart.isConnected && typeof chart.update === 'function') {
-                chart.update();
-                chart.style.display = 'block'; // Show the chart after updating
-            } else {
-                console.error("Component not ready or update method unavailable for:", chartId);
-            }
-        }, 1500); // Delay to ensure settings have taken effect
+        if (typeof chart.update === 'function') {
+            chart.update();
+        } else {
+            console.error("Update method not available.");
+        }
     } else {
-        console.error("Golfer name not provided or chart element not found:", chartId);
+        console.error("Chart element or golfer name not found.");
     }
 }
     </script>
