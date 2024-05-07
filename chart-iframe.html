@@ -157,7 +157,7 @@ function applyFilters(chartId, golferName) {
         } else {
             console.error("Chart element or golfer name not found for:", chartId);
         }
-    }, chartId === 'golferChart' ? 0 : 500);  // Delay second chart update by 500 ms
+    }, chartId === 'golferChart' ? 0 : 800);  // Delay second chart update by 500 ms
 }
 
 function setChartFilters(chart, golferName) {
@@ -172,12 +172,7 @@ function setChartFilters(chart, golferName) {
             }, [golferName]]
         }]
     }]);
-
-    if (typeof chart.update === 'function') {
         chart.update();
-    } else {
-        console.error("Update method not available for chart:", chart.id);
-    }
 }
 
     </script>
