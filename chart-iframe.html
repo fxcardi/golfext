@@ -142,11 +142,24 @@
 document.addEventListener("DOMContentLoaded", function() {
     const golferName = getQueryParam('golferName');
     console.log("Golfer name:", golferName);
+    golferChart.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                "level": 1
+            }, [golferName]]
+        }]}];
 
-    setTimeout(() => {
-        applyFilters('golferChart', golferName);
-        applyFilters('golferChart2', golferName);
-    }, 800);  // Correcting the misuse of setTimeout
+    console.log("Golfer chart filter:", golferChart.filters);
+
+
+    //setTimeout(() => {
+        //applyFilters('golferChart', golferName);
+       // applyFilters('golferChart2', golferName);
+    //}, 800);  // Correcting the misuse of setTimeout
 });
 
 function applyFilters(chartId, golferName) {
