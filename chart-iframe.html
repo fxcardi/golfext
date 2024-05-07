@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const golferName = getQueryParam('golferName');
     updateChart('golferChart', golferName);
     updateChart('golferChart1', golferName); // Ensure this is called as well
+    updateChart('golferChart2', golferName); // Ensure this is called as well
+
 });
 
 function updateChart(chartId, golferName) {
@@ -206,6 +208,63 @@ function updateChart(chartId, golferName) {
             ]
           }
         ]'
+      >
+      </luzmo-viz-item> 
+    </div>
+          <luzmo-viz-item
+        id = "golferChart2"
+        apiHost = "https://api.luzmo.com"
+        appServer = "https://app.luzmo.com"
+        authKey = "c312dabb-fc0c-4ab0-95cf-2d5801eb404c"
+        authToken = "wwIsAVAbI8Y7UbejK1STbHwSJYwYBm3En4eBGOIn82aRG2amYhnH0W3pLHIt0oAhOTwhbfkpbYAwxdADj1PSq0hxdv4kQfZbSdSVblbSu36GEx8lKYQp3CLi1iomZSiVyUCOasM0MGMbRGFdxJfUFz"
+        class="bar-chart"
+        type="bar-chart"
+        title= {}
+        options='{
+          "theme": "royale",
+          "bars": {
+            "roundedCorners": 7
+          },
+          "display": {
+              "title": false
+            },
+          "markers": {
+              "enabled": true,
+              "size": 5
+            }
+        }'
+        slots=' [
+            {
+              "name": "y-axis",
+              "content": [
+                {
+                  "column": "24ce15dd-3807-490a-983f-273bd57fdc61",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "Year (Yr)"
+                  },
+                  "type": "datetime",
+                  "subtype": null,
+                  "format": "%d-%m-%Y",
+                  "lowestLevel": 9,
+                  "level": 1
+                }
+              ]
+            },
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "a3273cb3-9f78-4e7c-9650-9bb1319d4225",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "% cut"
+                  },
+                  "type": "numeric",
+                  "subtype": null,
+                  "format": ",.2a%"
+                }
+              ]'
       >
       </luzmo-viz-item> 
     </div>
