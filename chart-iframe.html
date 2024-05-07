@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }]}];
 
     console.log("Golfer chart filter:", golferChart.filters);
-
+setTimeout(() => {
 golferChart2.filters = [{
         "condition": "or",
         "filters": [{
@@ -165,6 +165,7 @@ golferChart2.filters = [{
                 "level": 1
             }, [golferName]]
         }]}];
+        }, 800);
 
     console.log("Golfer chart1 filter:", golferChart.filters);
     //setTimeout(() => {
