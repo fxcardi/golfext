@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
         applyFilters('golferChart', golferName);
         applyFilters('golferChart2', golferName);
-    }, 5500);  // Correcting the misuse of setTimeout
+    }, 800);  // Correcting the misuse of setTimeout
 });
 
 function applyFilters(chartId, golferName) {
@@ -47,7 +47,7 @@ function applyFilters(chartId, golferName) {
         }]);
         if (typeof chart.update === 'function') {
             chart.update();
-                        console.error("chart updated.");
+                        console.log("chart updated.");
 
         } else {
             console.error("Update method not available.");
