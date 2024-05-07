@@ -47,6 +47,8 @@ function applyFilters(chartId, golferName) {
         }]);
         if (typeof chart.update === 'function') {
             chart.update();
+                        console.error("chart updated.");
+
         } else {
             console.error("Update method not available.");
         }
