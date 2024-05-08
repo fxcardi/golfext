@@ -134,6 +134,65 @@
       >
       </luzmo-viz-item> 
     </div>
+         <div class="container" style="height: 300px;">
+      <luzmo-viz-item
+        id = "golferChart3"
+        apiHost = "https://api.luzmo.com"
+        appServer = "https://app.luzmo.com"
+        authKey = "75da57ab-637e-4dc4-a68c-b13acc55363f"
+        authToken = "N1rdtIzYaAwyT575B7oEaj0McxQjXJOgyacRumooNccP6kK4OR4H7e6n7b7v4oLYl3ibZdwMiPsHc24KE6XSed36h3Po1tGBB6SpvYojw0GspjsrboiHTbE7BCmjDPYywui9U6AfDmcZzL14qbJcyS"
+        class="funnel"
+        type="funnel"
+        title= '{
+        "en": "Rank per year"
+        }'
+        options='{
+          "theme": "royale",
+          "bars": {
+            "roundedCorners": 7
+          },
+          "display": {
+              "title": true
+            },
+          "markers": {
+              "enabled": true,
+              "size": 5
+            }
+        }'
+       slots='[
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "b7bc2cdf-9ff3-4f32-a2ad-ac627065cd5f",
+                  "set": "60d65221-8154-4b9d-a613-77a2b30e2198",
+                  "label": {
+                    "en": "Value"
+                  },
+                  "type": "numeric",
+                  "format": ".0f"
+                }
+              ]
+            },
+            {
+              "name": "category",
+              "content": [
+                {
+                  "column": "d849b185-e6e6-488f-8e1f-3732c80dce1f",
+                  "set": "60d65221-8154-4b9d-a613-77a2b30e2198",
+                  "label": {
+                    "en": "Category"
+                  },
+                  "type": "hierarchy",
+                  "lowestLevel": 0,
+                  "level": null
+                }
+              ]
+            }
+          ]'
+      >
+      </luzmo-viz-item> 
+    </div>
     <script>
         // Function to parse query parameters
         function getQueryParam(param) {
@@ -158,6 +217,18 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Golfer chart filter:", golferChart.filters);
 setTimeout(() => {
 golferChart2.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                "level": 1
+            }, [golferName]]
+        }]}];
+        }, 800);
+setTimeout(() => {
+golferChart3.filters = [{
         "condition": "or",
         "filters": [{
             "expression": "? in ?",
