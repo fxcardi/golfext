@@ -27,14 +27,67 @@
         title= "{}"
         options='{
           "theme": "royale",
-          "bars": {
-            "roundedCorners": 7
-          },
-          "display": {
-              "title": true,
-              "legend": true
-            }
-        }'
+          "mode": "100",
+            "categories": {
+              "colored": false
+            },
+            "grid": {
+              "x": {
+                "enabled": false
+              },
+              "y": {
+                "enabled": false
+              }
+            },
+            "axislabels": {
+              "x": {
+                "enabled": false,
+                "position": "center"
+              },
+              "y": {
+                "enabled": false,
+                "position": "middle"
+              }
+            },
+            "axis": {
+              "x": {
+                "ticksMode": "ticks",
+                "scale": "linear"
+              },
+              "y": {
+                "ticksMode": "ticks"
+              }
+            },
+            "hidemodeOption": true,
+            "bars": {
+              "label": "absolute"
+            },
+            "filter": {},
+            "display": {
+              "title": false,
+              "legend": false,
+              "modeOption": false
+            },
+            "legend": {
+              "position": "topRight"
+            },
+            "interactivity": {
+              "select": true,
+              "urlConfig": {
+                "target": "_blank",
+                "url": null
+              },
+              "exportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ],
+              "availableExportTypes": [
+                "xlsx",
+                "csv",
+                "png"
+              ]
+            }'
         slots=' [
             {
               "name": "y-axis",
