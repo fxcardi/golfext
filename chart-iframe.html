@@ -251,7 +251,7 @@ function updateChartForYear(chart, year) {
     const endDateStr = endDate.toISOString();
 
     // Assuming you have a way to update the chart data, you might need to fetch new data or adjust the chart's settings
-    chart.filters = [{
+    golferChart3.filters = [{
         "condition": "and",
         "filters": [{
             "expression": "? < ?",
@@ -316,7 +316,7 @@ golferChart2.filters = [{
             }, [golferName]]
         }]}];      
         }, 800);
-});
+}});
 
     </script>
 </body>
