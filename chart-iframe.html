@@ -278,7 +278,7 @@ function updateChartForYear(chart, year) {
             }, [golferName]]
         }]
     }];
-
+}
 
     console.log("Golfer name:", golferName);
     golferChart.filters = [{
@@ -292,7 +292,6 @@ function updateChartForYear(chart, year) {
             }, [golferName]]
         }]}];
 
-    console.log("Golfer chart filter:", golferChart.filters);
 setTimeout(() => {
 golferChart2.filters = [{
         "condition": "or",
@@ -316,7 +315,7 @@ golferChart2.filters = [{
             }, [golferName]]
         }]}];      
         }, 800);
-}});
+});
 
     </script>
 </body>
