@@ -13,7 +13,7 @@
       charset="utf-8"
     ></script>
   </head>
-  <body>
+  <body style="background-color: rgb(17, 30, 47);">
     
     <div class="container" style="height: 250px;">
           <luzmo-viz-item
@@ -150,9 +150,9 @@
       >
       </luzmo-viz-item> 
     </div>
-<div style="font-size: 13px;height: 40px;line-height: 40px;display: block;background-color: rgb(17, 30, 47);">
-    <label for="yearSelect" style="font-color: rgb(206, 212, 218);">Select Year:</label>
-<select id="yearSelect" style="font-color: rgb(206, 212, 218);">
+<div style="font-size: 13px;height: 40px;line-height: 40px;display: block;float: right;">
+    <label for="yearSelect" style="color: rgb(206, 212, 218);">Select Year:</label>
+<select id="yearSelect">
     <option value="All" selected>All</option>
     <option value="2024">2024</option>
     <option value="2023">2023</option>
@@ -183,7 +183,7 @@
         options='{
           "theme": "royale",
             "display": {
-              "title": true,
+              "title": false,
               "legend": false,
               "categoryLabels": true,
               "values": true
