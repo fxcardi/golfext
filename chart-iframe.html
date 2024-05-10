@@ -14,7 +14,24 @@
     ></script>
   </head>
   <body style="background-color: white;">
-    
+    <!-- Tooltip Card Container -->
+<div id="golferTooltip" style="display:none;" class="tooltip-card">
+    <div class="tooltip-content">
+        <div class="tooltip-row">
+            <span class="label">Name:</span>
+            <span id="golferName" class="value">-</span>
+        </div>
+        <div class="tooltip-row">
+            <span class="label">Age:</span>
+            <span id="golferAge" class="value">-</span>
+        </div>
+        <div class="tooltip-row">
+            <span class="label">Total Earnings:</span>
+            <span id="golferEarnings" class="value">$0</span>
+        </div>
+    </div>
+</div>
+
     <div class="container" style="height: 250px;">
           <luzmo-viz-item
         id = "golferChart2"
@@ -245,6 +262,29 @@
 document.addEventListener("DOMContentLoaded", function() {
     const golferName = getQueryParam('golferName');
         const yearSelect = document.getElementById('yearSelect');
+    const tooltip = document.getElementById('golferTooltip');
+    const name = new URLSearchParams(window.location.search).get('golferName');
+    const age = getAgeFromChart(); // Implement this function based on your chart data
+    const earnings = getEarningsFromChart(); // Implement this function based on your chart data
+
+    document.getElementById('golferName').textContent = name || 'Unknown';
+    document.getElementById('golferAge').textContent = age || 'N/A';
+    document.getElementById('golferEarnings').textContent = `$${earnings || 0}`;
+
+    // Example to show tooltip - adjust positioning logic as needed
+    tooltip.style.display = 'block';
+    tooltip.style.left = '100px'; // Example position
+    tooltip.style.top = '100px'; // Example position
+
+    function getAgeFromChart() {
+    // Fetch age from chart or data source
+    return 30; // Example age
+}
+
+function getEarningsFromChart() {
+    // Fetch earnings from chart or data source
+    return '1,200,000'; // Example earnings
+}
 
     console.log("Golfer name:", golferName);
     golferChart.filters = [{
