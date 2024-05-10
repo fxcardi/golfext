@@ -287,7 +287,10 @@ golferChart2.filters = [{
 yearSelect.addEventListener('change', function() {
         const selectedYear = this.value;
         console.log("Selected Year:", selectedYear);
+        if(selectedYear!="All")
+        {
         updateChartForYear(golferChart3, selectedYear);
+         }
     });
 
 function updateChartForYear(chart, year) {
