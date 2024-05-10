@@ -236,6 +236,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const golferName = getQueryParam('golferName');
         const yearSelect = document.getElementById('yearSelect');
 
+    console.log("Golfer name:", golferName);
+    golferChart.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                "level": 1
+            }, [golferName]]
+        }]}];
+
+setTimeout(() => {
+golferChart2.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
+                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                "level": 1
+            }, [golferName]]
+        }]}];
+
+  golferChart3.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "6b6cff84-3bf3-496e-95c5-da73c4798b02",
+                "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540",
+                "level": 1
+            }, [golferName]]
+        }]}];      
+        }, 800);
+
 yearSelect.addEventListener('change', function() {
         const selectedYear = this.value;
         console.log("Selected Year:", selectedYear);
@@ -280,41 +316,6 @@ function updateChartForYear(chart, year) {
     }];
 }
 
-    console.log("Golfer name:", golferName);
-    golferChart.filters = [{
-        "condition": "or",
-        "filters": [{
-            "expression": "? in ?",
-            "parameters": [{
-                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                "level": 1
-            }, [golferName]]
-        }]}];
-
-setTimeout(() => {
-golferChart2.filters = [{
-        "condition": "or",
-        "filters": [{
-            "expression": "? in ?",
-            "parameters": [{
-                "column_id": "fd423f32-2f08-4a55-9b09-479d15df30aa",
-                "dataset_id": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
-                "level": 1
-            }, [golferName]]
-        }]}];
-
-  golferChart3.filters = [{
-        "condition": "or",
-        "filters": [{
-            "expression": "? in ?",
-            "parameters": [{
-                "column_id": "6b6cff84-3bf3-496e-95c5-da73c4798b02",
-                "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540",
-                "level": 1
-            }, [golferName]]
-        }]}];      
-        }, 800);
 });
 
     </script>
