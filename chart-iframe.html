@@ -150,6 +150,13 @@
       >
       </luzmo-viz-item> 
     </div>
+    <label for="yearSelect">Select Year:</label>
+<select id="yearSelect">
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+    <option value="2024" selected>2024</option>
+    <option value="2025">2025</option>
+</select>
          <div class="container" style="height: 300px;">
       <luzmo-viz-item
         id = "golferChart3"
@@ -227,6 +234,52 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const golferName = getQueryParam('golferName');
+        const yearSelect = document.getElementById('yearSelect');
+
+yearSelect.addEventListener('change', function() {
+        const selectedYear = this.value;
+        console.log("Selected Year:", selectedYear);
+        updateChartForYear(golferChart3, selectedYear);
+    });
+
+function updateChartForYear(chart, year) {
+      const startDate = new Date(year, 0, 1); // January 1 of selected year
+    const endDate = new Date(year, 11, 31, 23, 59, 59, 999); // December 31 of selected year
+
+    // Convert dates to ISO string and adjust for correct timezone if necessary
+    const startDateStr = startDate.toISOString();
+    const endDateStr = endDate.toISOString();
+
+    // Assuming you have a way to update the chart data, you might need to fetch new data or adjust the chart's settings
+    chart.filters = [{
+        "condition": "and",
+        "filters": [{
+            "expression": "? < ?",
+                  "parameters": [
+                    {
+                      "column_id": "2d68abe3-b72a-49ae-9bf0-4b5afabcb03b",
+                      "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540"
+            },  [endDateStr]]
+        }],
+        "filters": [{
+            "expression": "? > ?",
+                  "parameters": [
+                    {
+                      "column_id": "2d68abe3-b72a-49ae-9bf0-4b5afabcb03b",
+                      "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540"
+            }, [startDateStr]]
+        }],
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "6b6cff84-3bf3-496e-95c5-da73c4798b02",
+                "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540",
+                "level": 1
+            }, [golferName]]
+        }]
+    }];
+
+
     console.log("Golfer name:", golferName);
     golferChart.filters = [{
         "condition": "or",
