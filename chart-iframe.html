@@ -291,6 +291,20 @@ yearSelect.addEventListener('change', function() {
         {
         updateChartForYear(golferChart3, selectedYear);
          }
+         else
+         {
+          golferChart3.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "6b6cff84-3bf3-496e-95c5-da73c4798b02",
+                "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540",
+                "level": 1
+            }, [golferName]]
+        }]
+      }]; 
+         }
     });
 
 function updateChartForYear(chart, year) {
