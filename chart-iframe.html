@@ -23,7 +23,41 @@
         </div>
         <div class="tooltip-row">
             <span class="label">Age:</span>
-            <span id="golferAge" class="value">-</span>
+            <div class="container" style="height: 250px;">
+      <luzmo-viz-item
+        id = "golferChart4"
+        apiHost = "https://api.luzmo.com"
+        appServer = "https://app.luzmo.com"
+        authKey = "87a16452-9b44-478c-bc95-a182832262f9"
+        authToken = "6K4FUlGErvkVPscDlEfUpk4YBcNQN2CzufuH8bPbEzXJTZdOcQr1d4Yf9tN7rRl6OhSBHKSPtnWiKtWCJ97x9Zx6Fug2lYtsPMawJ98GeA0IAFfKRRvCm5CcQBedUcmmTUj6yrYWgiuYyzVOrY4ahi"
+        class="one-number"
+        type="one-number"
+        title= "{}"
+        options='{
+          "theme": "seasonal",
+          "mode": "100",
+            "categories": {
+              "colored": false
+            }
+            }'
+        slots='[
+            {
+              "name": "measure",
+              "content": [
+                {
+                  "column": "19d353af-ae3c-4926-b95c-d89b87ee1d3e",
+                  "set": "1086ce9e-6a9e-46f1-8add-67a423d748f6",
+                  "label": {
+                    "en": "AGE"
+                  },
+                  "type": "numeric",
+                  "subtype": null,
+                  "format": ".0f",
+                  "aggregationFunc": "min"
+                }
+              ]'
+      >
+      </luzmo-viz-item> 
         </div>
         <div class="tooltip-row">
             <span class="label">Total Earnings:</span>
@@ -32,7 +66,6 @@
     </div>
 </div>
 
-    <div class="container" style="height: 250px;">
           <luzmo-viz-item
         id = "golferChart2"
         apiHost = "https://api.luzmo.com"
@@ -264,11 +297,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const yearSelect = document.getElementById('yearSelect');
     const tooltip = document.getElementById('golferTooltip');
     const name = new URLSearchParams(window.location.search).get('golferName');
-    const age = getAgeFromChart(); // Implement this function based on your chart data
     const earnings = getEarningsFromChart(); // Implement this function based on your chart data
 
     document.getElementById('golferName').textContent = name || 'Unknown';
-    document.getElementById('golferAge').textContent = age || 'N/A';
     document.getElementById('golferEarnings').textContent = `$${earnings || 0}`;
 
     // Example to show tooltip - adjust positioning logic as needed
@@ -276,18 +307,16 @@ document.addEventListener("DOMContentLoaded", function() {
     tooltip.style.left = '100px'; // Example position
     tooltip.style.top = '100px'; // Example position
 
-    function getAgeFromChart() {
-    // Fetch age from chart or data source
-    return 30; // Example age
-}
-
 function getEarningsFromChart() {
     // Fetch earnings from chart or data source
     return '1,200,000'; // Example earnings
 }
 
     console.log("Golfer name:", golferName);
-    golferChart.filters = [{
+
+
+setTimeout(() => {
+      golferChart.filters = [{
         "condition": "or",
         "filters": [{
             "expression": "? in ?",
@@ -297,8 +326,6 @@ function getEarningsFromChart() {
                 "level": 1
             }, [golferName]]
         }]}];
-
-setTimeout(() => {
 golferChart2.filters = [{
         "condition": "or",
         "filters": [{
@@ -320,7 +347,18 @@ golferChart2.filters = [{
                 "level": 1
             }, [golferName]]
         }]
-      }];      
+      }];
+        golferChart4.filters = [{
+        "condition": "or",
+        "filters": [{
+            "expression": "? in ?",
+            "parameters": [{
+                "column_id": "6b6cff84-3bf3-496e-95c5-da73c4798b02",
+                "dataset_id": "f3ca42c3-d26b-4b24-b2b5-89f0145bb540",
+                "level": 1
+            }, [golferName]]
+        }]
+      }];       
         }, 800);
 
 yearSelect.addEventListener('change', function() {
