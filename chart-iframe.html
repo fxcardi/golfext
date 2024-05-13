@@ -15,7 +15,7 @@
   </head>
   <body style="background-color: white;">
     <!-- Tooltip Card Container -->
-<div id="golferTooltip" style="display:none;" class="tooltip-card">
+<div id="golferTooltip"  class="tooltip-card">
     <div class="tooltip-content">
         <div class="tooltip-row">
             <span class="label">Name:</span>
@@ -296,20 +296,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const yearSelect = document.getElementById('yearSelect');
     const tooltip = document.getElementById('golferTooltip');
     const name = new URLSearchParams(window.location.search).get('golferName');
-    const earnings = getEarningsFromChart(); // Implement this function based on your chart data
-
     document.getElementById('golferName').textContent = name || 'Unknown';
-    document.getElementById('golferEarnings').textContent = `$${earnings || 0}`;
 
-    // Example to show tooltip - adjust positioning logic as needed
-    tooltip.style.display = 'block';
-    tooltip.style.left = '100px'; // Example position
-    tooltip.style.top = '100px'; // Example position
-
-function getEarningsFromChart() {
-    // Fetch earnings from chart or data source
-    return '1,200,000'; // Example earnings
-}
 
     console.log("Golfer name:", golferName);
 
