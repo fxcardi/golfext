@@ -264,7 +264,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const yearSelect = document.getElementById('yearSelect');
 
     console.log("Golfer name:", golferName);
-    golferChart.filters = [{
+
+
+setTimeout(() => {
+      golferChart.filters = [{
         "condition": "or",
         "filters": [{
             "expression": "? in ?",
@@ -274,8 +277,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 "level": 1
             }, [golferName]]
         }]}];
-
-setTimeout(() => {
 golferChart2.filters = [{
         "condition": "or",
         "filters": [{
